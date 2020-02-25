@@ -60,7 +60,6 @@
     <Compile Include="model\Address.cs" />
     <Compile Include="model\Author.cs" />
     <Compile Include="model\Book.cs" />
-    <Compile Include="model\BookAuthor.cs" />
     <Compile Include="model\BookStorage.cs" />
     <Compile Include="model\BorrowAgreement.cs" />
     <Compile Include="model\DatabaseAdministrator.cs" />

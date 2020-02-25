@@ -10,14 +10,17 @@ namespace CodeFirstDatabase.model
         [Key]
         public int AuthorId { get; set; }
 
-        [Required]
-        [Display(Name = nameof(Name))]
         [MaxLength(50)]
         public string Name { get; set; }
 
-        [Required]
-        [Display(Name = nameof(Surname))]
         [MaxLength(50)]
         public string Surname { get; set; }
+
+        public ICollection<Book> Books { get; set; }
+
+        public Author()
+        {
+            this.Books = new HashSet<Book>();
+        }
     }
 }

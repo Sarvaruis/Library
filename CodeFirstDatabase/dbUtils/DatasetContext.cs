@@ -11,8 +11,6 @@ namespace CodeFirstDatabase.dbUtils
 
         public DbSet<Book> Books { get; set; }
 
-        public DbSet<BookAuthor> BooksAuthors { get; set; }
-
         public DbSet<BookStorage> BookStorages { get; set; }
 
         public DbSet<BorrowAgreement> BorrowAgreements { get; set; }

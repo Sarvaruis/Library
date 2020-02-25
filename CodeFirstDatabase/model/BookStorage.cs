@@ -9,8 +9,6 @@ namespace CodeFirstDatabase.model
         [Key]
         public int BookStorageId { get; set; }
 
-        [Required]
-        [Display(Name = nameof(Name))]
         [MaxLength(50)]
         public string Name { get; set; }
     }

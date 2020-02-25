@@ -99,60 +99,15 @@ namespace CodeFirstDatabase.dbUtils
                     };
                     objects.Add(book4);
 
-                    var bookAuthor = new BookAuthor
-                    {
-                        Book = book0,
-                        Author = author0
-                    };
-                    objects.Add(bookAuthor);
-                    bookAuthor = new BookAuthor
-                    {
-                        Book = book0,
-                        Author = author1
-                    };
-                    objects.Add(bookAuthor);
-                    bookAuthor = new BookAuthor
-                    {
-                        Book = book0,
-                        Author = author2
-                    };
-                    objects.Add(bookAuthor);
-                    bookAuthor = new BookAuthor
-                    {
-                        Book = book1,
-                        Author = author2
-                    };
-                    objects.Add(bookAuthor);
-                    bookAuthor = new BookAuthor
-                    {
-                        Book = book2,
-                        Author = author0
-                    };
-                    objects.Add(bookAuthor);
-                    bookAuthor = new BookAuthor
-                    {
-                        Book = book2,
-                        Author = author2
-                    };
-                    objects.Add(bookAuthor);
-                    bookAuthor = new BookAuthor
-                    {
-                        Book = book3,
-                        Author = author1
-                    };
-                    objects.Add(bookAuthor);
-                    bookAuthor = new BookAuthor
-                    {
-                        Book = book3,
-                        Author = author2
-                    };
-                    objects.Add(bookAuthor);
-                    bookAuthor = new BookAuthor
-                    {
-                        Book = book4,
-                        Author = author1
-                    };
-                    objects.Add(bookAuthor);
+                    book0.Authors.Add(author0);
+                    book0.Authors.Add(author1);
+                    book0.Authors.Add(author2);
+                    book1.Authors.Add(author2);
+                    book2.Authors.Add(author0);
+                    book2.Authors.Add(author2);
+                    book3.Authors.Add(author1);
+                    book3.Authors.Add(author2);
+                    book4.Authors.Add(author1);
 
                     var address0 = new Address
                     {
@@ -274,7 +229,6 @@ namespace CodeFirstDatabase.dbUtils
                     };
                     objects.Add(borrowAgreement);
 
-                    
                     /* adding sample data to context */
 
                     foreach (var obj in objects)
@@ -289,9 +243,6 @@ namespace CodeFirstDatabase.dbUtils
                                 break;
                             case "Book":
                                 context.Books.Add((Book)obj);
-                                break;
-                            case "BookAuthor":
-                                context.BooksAuthors.Add((BookAuthor)obj);
                                 break;
                             case "BookStorage":
                                 context.BookStorages.Add((BookStorage)obj);
