@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CodeFirstDatabase.model
@@ -7,18 +6,12 @@ namespace CodeFirstDatabase.model
     [Table("BookStorages")]
     public class BookStorage
     {
-        public BookStorage()
-        {
-            this.Books = new HashSet<Book>();
-        }
-
         [Key]
-        public int BookStorageID { get; set; }
+        public int BookStorageId { get; set; }
+
         [Required]
-        [Column("Name")]
+        [Display(Name = nameof(Name))]
         [MaxLength(50)]
-        public string BookStorageName { get; set; }
-        [Column("Books")]
-        public virtual ICollection<Book> Books { get; set; }
+        public string Name { get; set; }
     }
 }

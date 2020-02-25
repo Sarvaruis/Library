@@ -7,34 +7,33 @@ namespace CodeFirstDatabase.model
     [Table("Readers")]
     public class Reader
     {
-        public Reader()
-        {
-            this.BorrowAgreements = new HashSet<BorrowAgreement>();
-        }
-
         [Key]
         public int ReaderId { get; set; }
+
         [Required]
-        [Column("Name")]
+        [Display(Name = nameof(Name))]
         [MaxLength(50)]
-        public string ReaderName { get; set; }
+        public string Name { get; set; }
+
         [Required]
-        [Column("Surname")]
+        [Display(Name = nameof(Surname))]
         [MaxLength(50)]
-        public string ReaderSurname { get; set; }
+        public string Surname { get; set; }
+
         [Required]
-        [Column("Penalty")]
-        public int ReaderPenalty { get; set; }
-        [Required]
-        [Column("Address")]
-        public virtual Address ReaderAdress { get; set; }
-        [Column("PhoneNumber")]
+        [Display(Name = nameof(Penalty))]
+        public int Penalty { get; set; }
+
+        [Display(Name = nameof(PhoneNumber))]
         [MaxLength(15)]
-        public string ReaderPhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
+
         [Required]
-        [Column("UserAccount")]
+        [Display(Name = nameof(Adress))]
+        public virtual Address Adress { get; set; }
+
+        [Required]
+        [Display(Name = nameof(UserAccount))]
         public virtual User UserAccount { get; set; }
-        [Column("BorrowAgreements")]
-        public virtual ICollection<BorrowAgreement> BorrowAgreements { get; set; }
     }
 }

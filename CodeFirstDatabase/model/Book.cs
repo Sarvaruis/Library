@@ -7,30 +7,24 @@ namespace CodeFirstDatabase.model
     [Table("Books")]
     public class Book
     {
-        public Book()
-        {
-            this.AuthorsRef = new HashSet<BookAuthor>();
-            this.BorrowAgreements = new HashSet<BorrowAgreement>();
-        }
         [Key]
-        public int BookID { get; set; }
+        public int BookId { get; set; }
+
         [Required]
-        [Column("Name")]
+        [Display(Name = nameof(Name))]
         [MaxLength(50)]
-        public string BookName { get; set; }
+        public string Name { get; set; }
+
         [Required]
-        [Column("PublicationYear")]
-        public int BookPubYear { get; set; }
+        [Display(Name = nameof(PubYear))]
+        public int PubYear { get; set; }
+
         [Required]
-        [Column("Genre")]
-        public virtual Genre BookGenre { get; set; }
+        [Display(Name = nameof(Genre))]
+        public virtual Genre Genre { get; set; }
+
         [Required]
-        [Column("AuthorsRef")]
-        public virtual ICollection<BookAuthor> AuthorsRef { get; set; }
-        [Required]
-        [Column("BookStorage")]
+        [Display(Name = nameof(BookStorage))]
         public virtual BookStorage BookStorage { get; set; }
-        [Column("BorrowAgreements")]
-        public virtual ICollection<BorrowAgreement> BorrowAgreements { get; set; }
     }
 }

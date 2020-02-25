@@ -10,11 +10,11 @@ namespace CodeFirstDatabase.model
         public int BookAuthorId { get; set; }
 
         [Required]
-        [Column("BookRef")]
+        [Display(Name = nameof(Book))]
         public virtual Book Book { get; set; }
 
         [Required]
-        [Column("AuthorRef")]
+        [Display(Name = nameof(Author))]
         public virtual Author Author { get; set; }     
     }
 }

@@ -8,26 +8,32 @@ namespace CodeFirstDatabase.model
     {
         [Key]
         public int LibrarianId { get; set; }
+
         [Required]
-        [Column("Name")]
+        [Display(Name = nameof(Name))]
         [MaxLength(50)]
-        public string LibrarianName { get; set; }
+        public string Name { get; set; }
+
         [Required]
-        [Column("Surname")]
+        [Display(Name = nameof(Surname))]
         [MaxLength(50)]
-        public string LibrarianSurname { get; set; }
+        public string Surname { get; set; }
+
         [Required]
-        [Column("Salary")]
-        public int LibrarianSalary { get; set; }
+        [Display(Name = nameof(Salary))]
+        public int Salary { get; set; }
+
         [Required]
-        [Column("Address")]
-        public virtual Address LibrarianAdress { get; set; }
-        [Required]
-        [Column("PhoneNumber")]
+        [Display(Name = nameof(PhoneNumber))]
         [MaxLength(15)]
-        public string LibrarianPhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
+
         [Required]
-        [Column("UserAccount")]
+        [Display(Name = nameof(Address))]
+        public virtual Address Address { get; set; }
+
+        [Required]
+        [Display(Name = nameof(UserAccount))]
         public virtual User UserAccount { get; set; }
     }
 }

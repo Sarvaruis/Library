@@ -8,20 +8,24 @@ namespace CodeFirstDatabase.model
     {
         [Key]
         public int AdminId { get; set; }
+
         [Required]
-        [Column("Name")]
+        [Display(Name = nameof(Name))]
         [MaxLength(50)]
-        public string AdminName { get; set; }
+        public string Name { get; set; }
+
         [Required]
-        [Column("Surname")]
+        [Display(Name = nameof(Surname))]
         [MaxLength(50)]
-        public string AdminSurname { get; set; }
+        public string Surname { get; set; }
+
         [Required]
-        [Column("PhoneNumber")]
+        [Display(Name = nameof(PhoneNumber))]
         [MaxLength(15)]
-        public string AdminPhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
+
         [Required]
-        [Column("UserAccount")]
+        [Display(Name = nameof(UserAccount))]
         public virtual User UserAccount { get; set; }
     }
 }

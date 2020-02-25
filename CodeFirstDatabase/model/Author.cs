@@ -7,21 +7,17 @@ namespace CodeFirstDatabase.model
     [Table("Authors")]
     public class Author
     {
-        public Author()
-        {
-            this.BooksRef = new HashSet<BookAuthor>();
-        }
         [Key]
-        public int AuthorID { get; set; }
+        public int AuthorId { get; set; }
+
         [Required]
-        [Column("Name")]
+        [Display(Name = nameof(Name))]
         [MaxLength(50)]
-        public string AuthorName { get; set; }
+        public string Name { get; set; }
+
         [Required]
-        [Column("Surname")]
+        [Display(Name = nameof(Surname))]
         [MaxLength(50)]
-        public string AuthorSurname { get; set; }
-        [Column("BooksRef")]
-        public virtual ICollection<BookAuthor> BooksRef { get; set; }
+        public string Surname { get; set; }
     }
 }

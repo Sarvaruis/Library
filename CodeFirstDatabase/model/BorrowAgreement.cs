@@ -11,19 +11,20 @@ namespace CodeFirstDatabase.model
         public int BorrowAgreementId { get; set; }
 
         [Required]
-        [Column("BorrowedBook")]
+        [Display(Name = nameof(BorrowedBook))]
         public virtual Book BorrowedBook { get; set; }
 
         [Required]
-        [Column("Borrower")]
+        [Display(Name = nameof(Borrower))]
         public virtual Reader Borrower { get; set; }
 
         [Required]
-        [Column("ReturnDate", TypeName = "Date")]
+        [Display(Name = nameof(ReturnDate))]
+        [Column(TypeName = "Date")]
         public DateTime ReturnDate { get; set; }
 
         [Required]
-        [Column("IsActive")]
+        [Display(Name = nameof(IsActive))]
         public bool IsActive { get; set; }
     }
 }

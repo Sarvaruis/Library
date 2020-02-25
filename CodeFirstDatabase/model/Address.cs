@@ -8,15 +8,18 @@ namespace CodeFirstDatabase.model
     {
         [Key]
         public int AddressId { get; set; }
+
         [Required]
-        [Column("ZipCode")]
+        [Display(Name = nameof(ZipCode))]
         [MaxLength(6)]
         public string ZipCode { get; set; }
+
         [Required]
-        [Column("CityName")]
+        [Display(Name = nameof(CityName))]
         [MaxLength(50)]
         public string CityName { get; set; }
-        [Column("StreetName")]
+
+        [Display(Name = nameof(StreetName))]
         [MaxLength(50)]
         public string StreetName { get; set; }
     }
